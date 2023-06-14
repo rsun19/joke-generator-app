@@ -96,6 +96,8 @@ class MessagesViewController: MSMessagesAppViewController {
     
     @IBOutlet weak var startButton: UIButton!
     
+    @IBOutlet weak var startLabel: UILabel!
+    
     @IBOutlet weak var topLabel: UILabel!
     
     @IBOutlet weak var topStack: UIStackView!
@@ -108,6 +110,7 @@ class MessagesViewController: MSMessagesAppViewController {
         if self.presentationStyle == MSMessagesAppPresentationStyle.compact {
             self.requestPresentationStyle(MSMessagesAppPresentationStyle.expanded)
         }
+        startLabel.isHidden = true
         startButton.isHidden = true
         topLabel.isHidden = false
         topStack.isHidden = false
@@ -118,6 +121,7 @@ class MessagesViewController: MSMessagesAppViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        startLabel.isHidden = false
         startButton.isHidden = false
         topLabel.isHidden = true
         topStack.isHidden = true
