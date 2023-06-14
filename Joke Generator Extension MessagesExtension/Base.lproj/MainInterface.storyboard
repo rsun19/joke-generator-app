@@ -42,6 +42,9 @@
                                                 <rect key="frame" x="157" y="0.0" width="75" height="57"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Find"/>
+                                                <connections>
+                                                    <action selector="onSubmitPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="Pnp-kY-ADk"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -84,6 +87,9 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Send"/>
+                                                <connections>
+                                                    <action selector="onMessageSend:" destination="ObA-dk-sSI" eventType="touchUpInside" id="Rm8-GF-iOe"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -96,15 +102,22 @@
                             <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="ZCU-Op-KKy" secondAttribute="trailing" constant="50" id="3HM-Hj-FMJ"/>
                             <constraint firstItem="PQr-Rt-qRE" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="50" id="80N-Nu-sQQ"/>
                             <constraint firstItem="b9B-Jj-wTa" firstAttribute="centerX" secondItem="LDy-ih-0nr" secondAttribute="centerX" id="KeG-pF-xNP"/>
+                            <constraint firstItem="FYM-8A-stz" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="50" id="PTG-ED-FMy"/>
                             <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="teb-rj-qek" secondAttribute="trailing" constant="50" id="Pc6-c8-bYf"/>
                             <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="R19-sR-QOl" secondAttribute="trailing" constant="50" id="U4O-WV-ndC"/>
                             <constraint firstItem="3DK-vC-caj" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="50" id="VvF-BP-inM"/>
                             <constraint firstItem="3DK-vC-caj" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="50" id="Y8d-O6-fIx"/>
                             <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="ryX-80-24N" secondAttribute="trailing" constant="75" id="bo4-qJ-4f6"/>
+                            <constraint firstItem="Thm-gX-FHU" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="75" id="xqS-ao-J7l"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="332" height="323"/>
+                    <connections>
+                        <outlet property="isToggled" destination="Thm-gX-FHU" id="sDQ-t9-pYW"/>
+                        <outlet property="responseText" destination="FYM-8A-stz" id="FH3-2D-b2o"/>
+                        <outlet property="searchField" destination="PQr-Rt-qRE" id="BD8-9f-oV9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

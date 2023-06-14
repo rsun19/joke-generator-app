@@ -7,13 +7,39 @@
 
 import UIKit
 import Messages
+import MessageUI
 
 class MessagesViewController: MSMessagesAppViewController {
+    
+    
+    @IBOutlet weak var isToggled: UISwitch!
+    
+    @IBOutlet weak var searchField: UISearchBar!
+    
+    @IBAction func onSubmitPressed(_ sender: UIButton) {
+        if let searchText = searchField.text {
+            
+        } else {
+            
+        }
+    }
+    
+    @IBOutlet weak var responseText: UITextView!
+    
+    
+    @IBAction func onMessageSend(_ sender: UIButton) {
+        if let searchText = responseText.text {
+            let message = MSMessage()
+            let layout = MSMessageTemplateLayout()
+            layout.caption = searchText
+            message.layout = layout
+            activeConversation?.insert(message, completionHandler: nil)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
     }
     
     // MARK: - Conversation Handling
