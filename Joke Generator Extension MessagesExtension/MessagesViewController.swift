@@ -8,6 +8,7 @@
 import UIKit
 import Messages
 import MessageUI
+import Alamofire
 
 class MessagesViewController: MSMessagesAppViewController {
     
@@ -24,64 +25,43 @@ class MessagesViewController: MSMessagesAppViewController {
     @IBOutlet weak var responseText: UITextView!
     
     func queryRegularJoke() {
-        let url = URL(string: "https://jokegenerator.click/api/joke")!
-        var request = URLRequest(url: url)
         let query: String = searchField.text ?? ""
-        print(query)
-        print(query.count)
-        request.httpMethod = "GET"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(query, forHTTPHeaderField: "query")
-        print(request)
-        if let method = request.httpMethod {
-            print("Method: \(method)")
-        }
-
-        if let headers = request.allHTTPHeaderFields {
-            print("Headers:")
-            for (key, value) in headers {
-                print("\(key): \(value)")
-            }
-        }
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data {
-                if let jokes = try? JSONDecoder().decode([Joke].self, from: data) {
-                    print(jokes)
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "query": query
+        ]
+        AF.request("https://jokegenerator.click/api/joke", headers: headers).responseDecodable(of: [Joke].self) { response in
+            switch response.result {
+            case .success(let jokeResponse):
+                if let firstJoke = jokeResponse.first {
                     DispatchQueue.main.async {
-                        self.responseText.text = jokes.first?.joke
+                        self.responseText.text = firstJoke.joke
                     }
-                } else {
-                    print("Invalid Response")
                 }
-            } else if let error = error {
-                print("HTTP Request Failed \(error)")
+            case .failure(let error):
+                print("Request failed with error: \(error)")
             }
         }
-        task.resume()
     }
     
     func queryCleanJoke() {
-        let url = URL(string: "https://jokegenerator.click/api/cleanjoke")!
-        var request = URLRequest(url: url)
         let query: String = searchField.text ?? ""
-        request.setValue(query, forHTTPHeaderField: "query")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        print(searchField.text!)
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data {
-                if let jokes = try? JSONDecoder().decode([Joke].self, from: data) {
-                    print(jokes)
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "query": query
+        ]
+        AF.request("https://jokegenerator.click/api/cleanjoke", headers: headers).responseDecodable(of: [Joke].self) { response in
+            switch response.result {
+            case .success(let jokeResponse):
+                if let firstJoke = jokeResponse.first {
                     DispatchQueue.main.async {
-                        self.responseText.text = jokes.first?.joke
+                        self.responseText.text = firstJoke.joke
                     }
-                } else {
-                    print("Invalid Response")
                 }
-            } else if let error = error {
-                print("HTTP Request Failed \(error)")
+            case .failure(let error):
+                print("Request failed with error: \(error)")
             }
         }
-        task.resume()
     }
     
     @IBAction func onSubmitPressed(_ sender: UIButton) {
