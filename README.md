@@ -11,6 +11,6 @@ A few guidelines if you do decide to clone this app.
 
 - The API calls are on an honor system (read above guidelines). If I find that it has been abused, I will implement authentication headers and allow no one to access it... Don't ruin it for everyone.
 
-- Please contact me if you want a joke taken down. Email: robertssun1234 `<at>` gmail `<dot>` com.
+- Please contact me if you want a joke taken down (if and only if you can prove that you've authored it). Email: robertssun1234 `<at>` gmail `<dot>` com.
 
 - Happy hacking!
