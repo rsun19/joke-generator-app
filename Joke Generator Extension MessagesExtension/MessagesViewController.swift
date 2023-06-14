@@ -70,6 +70,7 @@ class MessagesViewController: MSMessagesAppViewController {
         } else {
             queryRegularJoke()
         }
+        searchField.resignFirstResponder()
     }
 
     @IBAction func onMessageSend(_ sender: UIButton) {
