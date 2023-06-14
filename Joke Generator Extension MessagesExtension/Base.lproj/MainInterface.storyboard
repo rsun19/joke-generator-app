@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,16 +18,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3DK-vC-caj">
-                                <rect key="frame" x="50" y="6.5" width="232" height="332"/>
+                                <rect key="frame" x="50" y="-13.5" width="231" height="352"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Joke Generator!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZn-fE-olr">
-                                        <rect key="frame" x="8" y="0.0" width="216.5" height="20.5"/>
+                                        <rect key="frame" x="7.5" y="0.0" width="216.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yel-Ad-fxG">
-                                        <rect key="frame" x="2" y="35.5" width="228" height="34.5"/>
+                                        <rect key="frame" x="2" y="35.5" width="227" height="54.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Start using Joke Generator"/>
                                         <connections>
@@ -34,13 +35,13 @@
                                         </connections>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joke Generator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWa-0t-z4A">
-                                        <rect key="frame" x="57.5" y="49.5" width="117" height="0.0"/>
+                                        <rect key="frame" x="57" y="69.5" width="117" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="teb-rj-qek">
-                                        <rect key="frame" x="0.0" y="85" width="232" height="56"/>
+                                        <rect key="frame" x="0.0" y="105" width="231" height="56"/>
                                         <subviews>
                                             <searchBar contentMode="scaleToFill" text="" placeholder="Enter in some categories" translatesAutoresizingMaskIntoConstraints="NO" id="PQr-Rt-qRE">
                                                 <rect key="frame" x="0.0" y="0.0" width="140" height="56"/>
@@ -54,7 +55,7 @@
                                                 </connections>
                                             </searchBar>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCU-Op-KKy">
-                                                <rect key="frame" x="155" y="0.0" width="77" height="56"/>
+                                                <rect key="frame" x="155" y="0.0" width="76" height="56"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Find"/>
                                                 <connections>
@@ -64,9 +65,9 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="JD5-AQ-qeq">
-                                        <rect key="frame" x="25.5" y="156" width="181" height="31"/>
+                                        <rect key="frame" x="25" y="176" width="181" height="31"/>
                                         <subviews>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Thm-gX-FHU">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Thm-gX-FHU">
                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Thm-gX-FHU" secondAttribute="height" multiplier="49:31" id="2gs-nV-JjP"/>
@@ -83,10 +84,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="RBh-nC-zp8">
-                                        <rect key="frame" x="0.0" y="202" width="232" height="130"/>
+                                        <rect key="frame" x="0.0" y="222" width="231" height="130"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FYM-8A-stz">
-                                                <rect key="frame" x="0.0" y="0.0" width="153" height="130"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="152" height="130"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="FYM-8A-stz" secondAttribute="height" multiplier="151:128" id="dNz-Ig-8VB"/>
@@ -101,7 +102,7 @@
                                                 </variation>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R19-sR-QOl">
-                                                <rect key="frame" x="168" y="0.0" width="64" height="130"/>
+                                                <rect key="frame" x="167" y="0.0" width="64" height="130"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="R19-sR-QOl" secondAttribute="height" multiplier="63:128" id="Bxq-Jj-1fD"/>
                                                 </constraints>
