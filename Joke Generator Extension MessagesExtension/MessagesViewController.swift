@@ -11,35 +11,118 @@ import MessageUI
 
 class MessagesViewController: MSMessagesAppViewController {
     
+    struct Joke: Decodable {
+        let id: String
+        let joke: String
+        let sentiment: String
+    }
     
     @IBOutlet weak var isToggled: UISwitch!
     
     @IBOutlet weak var searchField: UISearchBar!
     
+    @IBOutlet weak var responseText: UITextView!
+    
+    func queryRegularJoke(willQuery: Bool) {
+        let url = URL(string: "https://jokegenerator.click/api/joke")!
+        var request = URLRequest(url: url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        if willQuery == true {
+            request.setValue(searchField.text, forHTTPHeaderField: "query")
+        }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data {
+                if let jokes = try? JSONDecoder().decode([Joke].self, from: data) {
+                    print(jokes)
+                    DispatchQueue.main.async {
+                        self.responseText.text = jokes.first?.joke
+                    }
+                } else {
+                    print("Invalid Response")
+                }
+            } else if let error = error {
+                print("HTTP Request Failed \(error)")
+            }
+        }
+        task.resume()
+    }
+    
+    func queryCleanJoke(willQuery: Bool) {
+        let url = URL(string: "https://jokegenerator.click/api/cleanjoke")!
+        var request = URLRequest(url: url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        if willQuery == true {
+            request.setValue(searchField.text, forHTTPHeaderField: "query")
+        }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data {
+                if let jokes = try? JSONDecoder().decode([Joke].self, from: data) {
+                    print(jokes)
+                    DispatchQueue.main.async {
+                        self.responseText.text = jokes.first?.joke
+                    }
+                } else {
+                    print("Invalid Response")
+                }
+            } else if let error = error {
+                print("HTTP Request Failed \(error)")
+            }
+        }
+        task.resume()
+    }
+    
     @IBAction func onSubmitPressed(_ sender: UIButton) {
         if let searchText = searchField.text {
-            
+            if isToggled.isOn {
+                queryCleanJoke(willQuery: true)
+            } else {
+                queryRegularJoke(willQuery: true)
+            }
         } else {
-            
+            if isToggled.isOn {
+                queryCleanJoke(willQuery: false)
+            } else {
+                queryRegularJoke(willQuery: false)
+            }
         }
     }
     
-    @IBOutlet weak var responseText: UITextView!
-    
-    
     @IBAction func onMessageSend(_ sender: UIButton) {
         if let searchText = responseText.text {
-            let message = MSMessage()
-            let layout = MSMessageTemplateLayout()
-            layout.caption = searchText
-            message.layout = layout
-            activeConversation?.insert(message, completionHandler: nil)
+            UIPasteboard.general.setValue(searchText, forPasteboardType: "public.plain-text")
         }
+    }
+    
+    
+    @IBOutlet weak var startButton: UIButton!
+    
+    @IBOutlet weak var topLabel: UILabel!
+    
+    @IBOutlet weak var topStack: UIStackView!
+    
+    @IBOutlet weak var midStack: UIStackView!
+    
+    @IBOutlet weak var bottomStack: UIStackView!
+    
+    @IBAction func startClick(_ sender: UIButton) {
+        if self.presentationStyle == MSMessagesAppPresentationStyle.compact {
+            self.requestPresentationStyle(MSMessagesAppPresentationStyle.expanded)
+        }
+        startButton.isHidden = true
+        topLabel.isHidden = false
+        topStack.isHidden = false
+        midStack.isHidden = false
+        bottomStack.isHidden = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        startButton.isHidden = false
+        topLabel.isHidden = true
+        topStack.isHidden = true
+        midStack.isHidden = true
+        bottomStack.isHidden = true
     }
     
     // MARK: - Conversation Handling

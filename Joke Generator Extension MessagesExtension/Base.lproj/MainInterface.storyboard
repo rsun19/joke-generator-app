@@ -13,22 +13,31 @@
             <objects>
                 <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="Joke_Generator_Extension_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="center" id="zMn-AG-sqS">
-                        <rect key="frame" x="0.0" y="0.0" width="332" height="323"/>
+                        <rect key="frame" x="0.0" y="0.0" width="332" height="374"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3DK-vC-caj">
-                                <rect key="frame" x="50" y="5" width="232" height="283.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3DK-vC-caj">
+                                <rect key="frame" x="50" y="56" width="232" height="282.5"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joke Generator" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9B-Jj-wTa">
-                                        <rect key="frame" x="57.5" y="0.0" width="117" height="20.5"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yel-Ad-fxG">
+                                        <rect key="frame" x="2" y="0.0" width="228" height="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Start using Joke Generator"/>
+                                        <connections>
+                                            <action selector="startClick:" destination="ObA-dk-sSI" eventType="touchUpInside" id="XPP-oR-XWC"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joke Generator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWa-0t-z4A">
+                                        <rect key="frame" x="57.5" y="0.0" width="117" height="12.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="teb-rj-qek">
-                                        <rect key="frame" x="0.0" y="35.5" width="232" height="57"/>
+                                        <rect key="frame" x="0.0" y="27.5" width="232" height="64"/>
                                         <subviews>
                                             <searchBar contentMode="scaleToFill" text="" placeholder="Enter in some categories" translatesAutoresizingMaskIntoConstraints="NO" id="PQr-Rt-qRE">
-                                                <rect key="frame" x="0.0" y="0.0" width="142" height="57"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="64"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="PQr-Rt-qRE" secondAttribute="height" multiplier="5:2" id="VHG-wH-E2f"/>
                                                 </constraints>
@@ -39,7 +48,7 @@
                                                 </connections>
                                             </searchBar>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCU-Op-KKy">
-                                                <rect key="frame" x="157" y="0.0" width="75" height="57"/>
+                                                <rect key="frame" x="175" y="0.0" width="57" height="64"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Find"/>
                                                 <connections>
@@ -49,7 +58,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="JD5-AQ-qeq">
-                                        <rect key="frame" x="25" y="107.5" width="182" height="31"/>
+                                        <rect key="frame" x="25" y="106.5" width="182" height="31"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Thm-gX-FHU">
                                                 <rect key="frame" x="0.0" y="0.0" width="51.5" height="31"/>
@@ -68,7 +77,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="RBh-nC-zp8">
-                                        <rect key="frame" x="0.0" y="153.5" width="232" height="130"/>
+                                        <rect key="frame" x="0.0" y="152.5" width="232" height="130"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FYM-8A-stz">
                                                 <rect key="frame" x="0.0" y="0.0" width="153" height="130"/>
@@ -86,7 +95,7 @@
                                                     <constraint firstAttribute="width" secondItem="R19-sR-QOl" secondAttribute="height" multiplier="63:128" id="Bxq-Jj-1fD"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Send"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Copy"/>
                                                 <connections>
                                                     <action selector="onMessageSend:" destination="ObA-dk-sSI" eventType="touchUpInside" id="Rm8-GF-iOe"/>
                                                 </connections>
@@ -94,29 +103,55 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="FYM-8A-stz" firstAttribute="top" secondItem="3DK-vC-caj" secondAttribute="top" constant="152.5" id="3jo-1O-Fow"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3jo-1O-Fow"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LDy-ih-0nr"/>
                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
+                            <constraint firstItem="3DK-vC-caj" firstAttribute="top" secondItem="LDy-ih-0nr" secondAttribute="top" constant="8" id="0nk-M3-xyW"/>
                             <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="ZCU-Op-KKy" secondAttribute="trailing" constant="50" id="3HM-Hj-FMJ"/>
+                            <constraint firstItem="FYM-8A-stz" firstAttribute="top" secondItem="LDy-ih-0nr" secondAttribute="top" constant="160.5" id="4ZJ-No-bv8"/>
                             <constraint firstItem="PQr-Rt-qRE" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="50" id="80N-Nu-sQQ"/>
-                            <constraint firstItem="b9B-Jj-wTa" firstAttribute="centerX" secondItem="LDy-ih-0nr" secondAttribute="centerX" id="KeG-pF-xNP"/>
+                            <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="ryX-80-24N" secondAttribute="trailing" constant="75" id="GSJ-uK-oVX"/>
+                            <constraint firstItem="FYM-8A-stz" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="50" id="HZQ-hQ-ONI"/>
                             <constraint firstItem="FYM-8A-stz" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="50" id="PTG-ED-FMy"/>
                             <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="teb-rj-qek" secondAttribute="trailing" constant="50" id="Pc6-c8-bYf"/>
+                            <constraint firstItem="LDy-ih-0nr" firstAttribute="bottom" secondItem="FYM-8A-stz" secondAttribute="bottom" constant="1.5" id="Tha-Uz-3gj"/>
                             <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="R19-sR-QOl" secondAttribute="trailing" constant="50" id="U4O-WV-ndC"/>
                             <constraint firstItem="3DK-vC-caj" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="50" id="VvF-BP-inM"/>
+                            <constraint firstItem="FYM-8A-stz" firstAttribute="top" secondItem="LDy-ih-0nr" secondAttribute="top" constant="8" id="Wkz-yT-kbp"/>
                             <constraint firstItem="3DK-vC-caj" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="50" id="Y8d-O6-fIx"/>
                             <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="ryX-80-24N" secondAttribute="trailing" constant="75" id="bo4-qJ-4f6"/>
+                            <constraint firstItem="gWa-0t-z4A" firstAttribute="top" secondItem="LDy-ih-0nr" secondAttribute="top" constant="8" id="cJb-48-Fml"/>
+                            <constraint firstItem="LDy-ih-0nr" firstAttribute="bottom" secondItem="3DK-vC-caj" secondAttribute="bottom" constant="1.5" id="ebg-9S-wIZ"/>
                             <constraint firstItem="Thm-gX-FHU" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="75" id="xqS-ao-J7l"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4ZJ-No-bv8"/>
+                                <exclude reference="Wkz-yT-kbp"/>
+                            </mask>
+                        </variation>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="332" height="323"/>
+                    <size key="freeformSize" width="332" height="374"/>
                     <connections>
+                        <outlet property="bottomStack" destination="RBh-nC-zp8" id="Ra5-Xq-QBx"/>
                         <outlet property="isToggled" destination="Thm-gX-FHU" id="sDQ-t9-pYW"/>
+                        <outlet property="midStack" destination="JD5-AQ-qeq" id="hjR-Ic-Tyw"/>
                         <outlet property="responseText" destination="FYM-8A-stz" id="FH3-2D-b2o"/>
                         <outlet property="searchField" destination="PQr-Rt-qRE" id="BD8-9f-oV9"/>
+                        <outlet property="startButton" destination="yel-Ad-fxG" id="51M-kE-bWT"/>
+                        <outlet property="topLabel" destination="gWa-0t-z4A" id="Ts6-dF-u3z"/>
+                        <outlet property="topStack" destination="teb-rj-qek" id="kzs-Tb-7bk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
