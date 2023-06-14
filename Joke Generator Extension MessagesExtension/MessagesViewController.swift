@@ -23,12 +23,25 @@ class MessagesViewController: MSMessagesAppViewController {
     
     @IBOutlet weak var responseText: UITextView!
     
-    func queryRegularJoke(willQuery: Bool) {
+    func queryRegularJoke() {
         let url = URL(string: "https://jokegenerator.click/api/joke")!
         var request = URLRequest(url: url)
+        let query: String = searchField.text ?? ""
+        print(query)
+        print(query.count)
+        request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        if willQuery == true {
-            request.setValue(searchField.text, forHTTPHeaderField: "query")
+        request.setValue(query, forHTTPHeaderField: "query")
+        print(request)
+        if let method = request.httpMethod {
+            print("Method: \(method)")
+        }
+
+        if let headers = request.allHTTPHeaderFields {
+            print("Headers:")
+            for (key, value) in headers {
+                print("\(key): \(value)")
+            }
         }
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
@@ -47,13 +60,13 @@ class MessagesViewController: MSMessagesAppViewController {
         task.resume()
     }
     
-    func queryCleanJoke(willQuery: Bool) {
+    func queryCleanJoke() {
         let url = URL(string: "https://jokegenerator.click/api/cleanjoke")!
         var request = URLRequest(url: url)
+        let query: String = searchField.text ?? ""
+        request.setValue(query, forHTTPHeaderField: "query")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        if willQuery == true {
-            request.setValue(searchField.text, forHTTPHeaderField: "query")
-        }
+        print(searchField.text!)
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
                 if let jokes = try? JSONDecoder().decode([Joke].self, from: data) {
@@ -72,21 +85,13 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     @IBAction func onSubmitPressed(_ sender: UIButton) {
-        if let searchText = searchField.text {
-            if isToggled.isOn {
-                queryCleanJoke(willQuery: true)
-            } else {
-                queryRegularJoke(willQuery: true)
-            }
+        if isToggled.isOn {
+            queryCleanJoke()
         } else {
-            if isToggled.isOn {
-                queryCleanJoke(willQuery: false)
-            } else {
-                queryRegularJoke(willQuery: false)
-            }
+            queryRegularJoke()
         }
     }
-    
+
     @IBAction func onMessageSend(_ sender: UIButton) {
         if let searchText = responseText.text {
             UIPasteboard.general.setValue(searchText, forPasteboardType: "public.plain-text")
