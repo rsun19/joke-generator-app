@@ -44,7 +44,7 @@
                                         <rect key="frame" x="0.0" y="76.5" width="231" height="56"/>
                                         <subviews>
                                             <searchBar contentMode="scaleToFill" text="" placeholder="Enter in some categories" translatesAutoresizingMaskIntoConstraints="NO" id="PQr-Rt-qRE">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="56"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="152" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="PQr-Rt-qRE" secondAttribute="height" multiplier="5:2" id="VHG-wH-E2f"/>
                                                 </constraints>
@@ -55,7 +55,7 @@
                                                 </connections>
                                             </searchBar>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCU-Op-KKy">
-                                                <rect key="frame" x="175" y="0.0" width="56" height="56"/>
+                                                <rect key="frame" x="167" y="0.0" width="64" height="56"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Find"/>
                                                 <connections>
@@ -87,7 +87,7 @@
                                         <rect key="frame" x="0.0" y="193.5" width="231" height="250"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FYM-8A-stz">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="250"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="152" height="250"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="0Mz-kq-0Tc"/>
@@ -109,7 +109,7 @@
                                                 </variation>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R19-sR-QOl">
-                                                <rect key="frame" x="175" y="0.0" width="56" height="250"/>
+                                                <rect key="frame" x="167" y="0.0" width="64" height="250"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="R19-sR-QOl" secondAttribute="height" multiplier="63:128" id="Bxq-Jj-1fD"/>
                                                     <constraint firstAttribute="height" constant="250" id="K6f-kK-sLj"/>
@@ -144,6 +144,8 @@
                                         <exclude reference="lFm-jy-68R"/>
                                         <exclude reference="ZOt-Og-qmW"/>
                                         <exclude reference="3jo-1O-Fow"/>
+                                        <exclude reference="ppc-3t-mQD"/>
+                                        <exclude reference="zsc-AH-R9y"/>
                                     </mask>
                                 </variation>
                             </stackView>

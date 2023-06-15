@@ -54,6 +54,7 @@
 		E10D9B292A38D606003D526C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E10D9B2B2A38D607003D526C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E10D9B2D2A38D607003D526C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1EAA73D2A3BB4E800832CF3 /* Joke Generator Extension MessagesExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Joke Generator Extension MessagesExtension.entitlements"; sourceTree = "<group>"; };
 		F09BD5DE9FD9F6F83B9C62A0 /* Pods_Joke_Generator_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Joke_Generator_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F659A6D5A2C0F1FA562C6AD2 /* Pods-Joke Generator Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Joke Generator Extension.release.xcconfig"; path = "Target Support Files/Pods-Joke Generator Extension/Pods-Joke Generator Extension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +132,7 @@
 		E10D9B252A38D606003D526C /* Joke Generator Extension MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
+				E1EAA73D2A3BB4E800832CF3 /* Joke Generator Extension MessagesExtension.entitlements */,
 				E10D9B262A38D606003D526C /* MessagesViewController.swift */,
 				E10D9B282A38D606003D526C /* MainInterface.storyboard */,
 				E10D9B2B2A38D607003D526C /* Assets.xcassets */,
@@ -451,6 +453,7 @@
 			baseConfigurationReference = 0E25FB6FCF0B236D7ED0649E /* Pods-Joke Generator Extension MessagesExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = "Joke Generator Extension MessagesExtension/Joke Generator Extension MessagesExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KXK74SLVZH;
@@ -468,6 +471,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jokegenerator.ext.Joke-Generator-Extension.MessagesExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -479,6 +483,7 @@
 			baseConfigurationReference = 2CCF3DC037AFE981E771A707 /* Pods-Joke Generator Extension MessagesExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = "Joke Generator Extension MessagesExtension/Joke Generator Extension MessagesExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KXK74SLVZH;
@@ -496,6 +501,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jokegenerator.ext.Joke-Generator-Extension.MessagesExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -520,7 +526,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -545,7 +551,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
